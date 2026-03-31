@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Практика верстки</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--Статью верстать тут-->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand"><a href="#">Marketch</a></div>
+            <nav class="main-nav" aria-label="Главное меню">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li class="active"><a href="#">Блог</a></li>
+                    <li><a href="#">Проекты</a></li>
+                    <li><a href="#">О нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+            <header class="post-header">
+                <h1>Замыкания в JavaScript для начинающих</h1>
+                <div class="post-meta">
+                    <img class="author-photo" src="article-design/2744EFD6-B878-4DCB-B0D5-526F1B233733/848B0BFD-C857-4F1E-93BF-3822E0A81A7E@1x.png" alt="автор">
+                    <div class="post-meta__info">
+                        <div class="author">Антон Иванов</div>
+                        <div class="meta">Март 2026 · 8 минут чтения</div>
+                    </div>
+                </div>
+                <figure class="hero">
+                    <img src="article-design/2744EFD6-B878-4DCB-B0D5-526F1B233733/CA501510-E978-4377-9076-8F392B899C1B@1x.png" alt="hero">
+                </figure>
+            </header>
+
+            <div class="post-content">
+                <p>Замыкания — это функция вместе с лексическим окружением, в котором она была объявлена. Они позволяют функции помнить переменные из внешней области видимости даже после того, как внешняя функция завершила выполнение.</p>
+
+                <h2>Как работают замыкания</h2>
+                <p>Когда функция создаётся, она сохраняет ссылку на своё лексическое окружение. В результате вложенная функция продолжает иметь доступ к переменным внешней функции.</p>
+
+                <pre><code>// простой счётчик на замыканиях
+function makeCounter() {
+  let count = 0;
+  return function() {
+    return ++count;
+  };
+}
+const counter = makeCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+</code></pre>
+
+                <blockquote>Замыкания — мощный инструмент. Их используют для инкапсуляции состояния и создания фабрик функций.</blockquote>
+
+                <p>Источник статьи: <a href="https://medium.com/webbdev/closures-9a20e84b62cd" target="_blank" rel="noopener">Medium — Closures</a></p>
+            </div>
+        </article>
+    </main>
 </body>
 </html>
